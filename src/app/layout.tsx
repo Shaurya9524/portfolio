@@ -23,7 +23,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${bricolage.variable} ${firaCode.variable}`}>
       <body>
         <Cursor />
-        <Nav />
         {children}
       </body>
     </html>
