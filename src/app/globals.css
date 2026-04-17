@@ -1,0 +1,150 @@
+:root {
+  /* background */
+  --bg-base: #090a10;
+  --bg-subtle: #0c0d15;
+
+  /* surface */
+  --surface: #0f1018;
+  --surface-raised: #13141e;
+  --surface-overlay: #181928;
+
+  /* border */
+  --border-subtle: #1c1e2e;
+  --border-default: #252740;
+
+  /* text */
+  --text-primary: #eef2ff;
+  --text-secondary: #9099bc;
+  --text-tertiary: #525878;
+
+  /* accent color */
+  --blue: #3178c6;
+  --gold: #f0b860;
+  --green: #34d399;
+  --blue-bright: #4d9fe8;
+  --blue-ice: #7dd3fc;
+
+  /* accent glow */
+  --blue-glow: rgba(49, 120, 198, 0.14);
+  --blue-glow-subtle: rgba(49, 120, 198, 0.06);
+
+  /* font */
+  --font-heading: var(--font-bricolage), sans-serif;
+  --font-mono: var(--font-fira-code), monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.85
+}
+
+a,
+button {
+  cursor: none;
+}
+
+a {
+  color: var(--blue-ice);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--text-primary);
+}
+
+button {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(49, 120, 198, 0.38);
+}
+
+input,
+textarea {
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0.72rem 1rem;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(49, 120, 198, 0.12);
+}
+
+::selection {
+  background: var(--blue);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 2px;
+}

@@ -1,0 +1,271 @@
+.section {
+  padding: 8rem 4rem 6rem;
+  background: var(--bg-subtle);
+  position: relative;
+  clip-path: polygon(0 0, 100% 44px, 100% 100%, 0 100%);
+  margin-top: -44px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.info {
+  padding-top: 1rem;
+}
+
+.stag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.67rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-ice);
+  margin-bottom: 0.85rem;
+}
+
+.stag::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--blue-ice);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.headingGradient {
+  background: linear-gradient(120deg, var(--blue), var(--blue-ice));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blurb {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 2.5rem;
+  max-width: 320px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--text-primary);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--text-tertiary);
+  transition: stroke 0.2s;
+}
+
+.link:hover .icon {
+  border-color: var(--blue);
+  background: var(--blue-glow);
+}
+
+.link:hover .icon svg {
+  stroke: var(--blue-ice);
+}
+
+.linkLabel {
+  font-size: 0.63rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.linkValue {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.form {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 2.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-ice), transparent);
+}
+
+.formTitle {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.formSub {
+  font-size: 0.77rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.field label {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  transition: color 0.2s;
+}
+
+.field:focus-within label {
+  color: var(--blue-ice);
+}
+
+.field input,
+.field textarea {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 0.72rem 1rem;
+  color: var(--text-primary);
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(49, 120, 198, 0.12);
+}
+
+.field textarea {
+  min-height: 110px;
+}
+
+.submit {
+  width: 100%;
+  padding: 0.88rem;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(49, 120, 198, 0.38);
+}
+
+.submit:hover::after {
+  opacity: 1;
+}
+
+.note {
+  font-size: 0.66rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

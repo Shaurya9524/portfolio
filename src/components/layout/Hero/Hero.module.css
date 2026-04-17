@@ -1,0 +1,311 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.orb1 {
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(49, 120, 198, 0.2) 0%, transparent 70%);
+  top: -80px;
+  right: -80px;
+  animation: float1 14s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.07) 0%, transparent 70%);
+  bottom: 5%;
+  left: 8%;
+  animation: float2 18s ease-in-out infinite;
+}
+
+.orb3 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(49, 120, 198, 0.1) 0%, transparent 70%);
+  top: 45%;
+  left: 52%;
+  animation: float3 11s ease-in-out infinite;
+}
+
+@keyframes float1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  50% {
+    transform: translate(-40px, 50px)
+  }
+}
+
+@keyframes float2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  50% {
+    transform: translate(50px, -35px)
+  }
+}
+
+@keyframes float3 {
+
+  0%,
+  100% {
+    transform: translate(-50%, 0)
+  }
+
+  50% {
+    transform: translate(-50%, -28px)
+  }
+}
+
+.dotGrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(125, 211, 252, 0.1) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 90% 75% at 50% 30%, black 15%, transparent 75%);
+}
+
+.heroInner {
+  max-width: 1100px;
+  position: relative;
+  z-index: 2;
+}
+
+.heroEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--blue-ice);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.ebar {
+  width: 28px;
+  height: 1px;
+  background: var(--blue-ice);
+}
+
+.heroTitle {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 2rem;
+}
+
+.t1 {
+  display: block;
+  color: var(--text-primary);
+}
+
+.t2 {
+  display: block;
+  background: linear-gradient(120deg, var(--blue) 0%, var(--blue-ice) 60%, #c0e8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroTw {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+  min-height: 1.7em;
+}
+
+.twPrefix {
+  color: var(--blue);
+}
+
+.twText {
+  color: var(--text-primary);
+}
+
+.twCur {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--blue-ice);
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
+}
+
+.heroDesc {
+  max-width: 500px;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btnBlue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btnBlue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btnBlue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(49, 120, 198, 0.4);
+}
+
+.btnBlue:hover::after {
+  opacity: 1;
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 1px solid var(--border-default);
+  border-radius: 5px;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btnGhost:hover {
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+  transform: translateY(-2px);
+}
+
+.btnIcon {
+  padding: 0.8rem 1rem;
+}
+
+.heroScrollInd {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.scrollBar {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--blue), transparent);
+  animation: drip 2.2s 1.5s ease-in-out infinite;
+}
+
+@keyframes drip {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 1
+  }
+
+  49% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .heroScrollInd {
+    right: 1.5rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .heroTitle {
+    font-size: 3rem !important;
+  }
+}
