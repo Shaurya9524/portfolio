@@ -133,7 +133,7 @@
   align-items: center;
 }
 
-.num {
+.index {
   font-size: 0.63rem;
   color: var(--text-tertiary);
   letter-spacing: 0.1em;
@@ -144,24 +144,6 @@
   padding: 0.18rem 0.6rem;
   border-radius: 20px;
   letter-spacing: 0.05em;
-}
-
-.statusLive {
-  background: rgba(52, 211, 153, 0.1);
-  color: var(--green);
-  border: 1px solid rgba(52, 211, 153, 0.22);
-}
-
-.statusOngoing {
-  background: rgba(240, 184, 96, 0.1);
-  color: var(--gold);
-  border: 1px solid rgba(240, 184, 96, 0.22);
-}
-
-.statusNpm {
-  background: var(--blue-glow);
-  color: var(--blue-bright);
-  border: 1px solid rgba(49, 120, 198, 0.3);
 }
 
 .name {

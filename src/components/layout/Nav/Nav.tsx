@@ -26,7 +26,7 @@ export default function Nav() {
 
       <ul className={styles.links}>
         <li><Link href="#skills">Skills</Link></li>
-        <li><Link href="#projects">Projects</Link></li>
+        <li><Link href="/projects">Projects</Link></li>
         <li>
           <Link href="#contact" className={styles.cta}>
             Contact

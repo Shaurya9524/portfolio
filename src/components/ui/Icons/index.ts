@@ -1,1 +1,1 @@
-export { GitHubIcon, DiscordIcon, LinkedInIcon, EmailIcon } from "./Icons"
+export { GitHubIcon, DiscordIcon, LinkedInIcon, EmailIcon, ExternalLinkIcon } from "./Icons"
