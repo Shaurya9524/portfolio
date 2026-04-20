@@ -1,8 +1,9 @@
 import { Bricolage_Grotesque, Fira_Code } from "next/font/google"
 
-import "./globals.css"
-import Nav from "@/components/layout/Nav"
 import Cursor from "@/components/ui/Cursor/Cursor"
+import { AlertProvider } from "@/context/AlertContext"
+import AlertStack from "@/components/ui/Alert/AlertStack"
+import "./globals.css"
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -22,8 +23,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${bricolage.variable} ${firaCode.variable}`}>
       <body>
-        <Cursor />
-        {children}
+        <AlertProvider>
+          <Cursor />
+          <AlertStack />
+          {children}
+        </AlertProvider>
       </body>
     </html>
   )
