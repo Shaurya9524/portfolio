@@ -1,0 +1,36 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background: var(--surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  cursor: none;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-default);
+  background: var(--surface-raised);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  transition: background 0.2s;
+}
+
+.dotOn {
+  background: var(--blue-ice);
+  box-shadow: 0 0 6px var(--blue-ice);
+}

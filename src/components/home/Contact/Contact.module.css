@@ -223,7 +223,6 @@
   letter-spacing: 0.06em;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;

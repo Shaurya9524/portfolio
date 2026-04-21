@@ -56,6 +56,20 @@ body {
   cursor: none;
 }
 
+a,
+button {
+  cursor: none;
+}
+
+body.cursorOff {
+  cursor: auto;
+}
+
+body.cursorOff a,
+body.cursorOff button {
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3,
@@ -72,11 +86,6 @@ h6 {
 p {
   color: var(--text-secondary);
   line-height: 1.85
-}
-
-a,
-button {
-  cursor: none;
 }
 
 a {
@@ -109,7 +118,7 @@ button:hover {
 
 input,
 textarea {
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   background: var(--surface-raised);
   color: var(--text-primary);

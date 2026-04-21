@@ -22,8 +22,12 @@
   transition: width 0.3s, height 0.3s, border-color 0.3s;
 }
 
-@media (max-width: 540px) {
+:global(body.cursorOff) .dot,
+:global(body.cursorOff) .ring {
+  display: none;
+}
 
+@media (max-width: 540px) {
   .dot,
   .ring {
     display: none;
