@@ -46,7 +46,7 @@ export default function Cursor() {
       if (!ring) return
       ring.style.width = "32px"
       ring.style.height = "32px"
-      ring.style.borderColor = "rgba(125, 211, 252, 0.35)"
+      ring.style.borderColor = "var(--cursor-ring)"
     }
 
     const bindHoverTargets = () => {

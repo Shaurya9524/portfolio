@@ -2,6 +2,7 @@
 
 import { ArrowUpIcon } from "@/components/ui/Icons"
 import CursorToggle from "@/components/ui/Cursor/Toggle"
+import ThemeSwitcher from "@/components/ui/ThemeSwitcher"
 import { footerLinks, footerSocials } from "@/data/footer"
 import styles from "./Footer.module.css"
 
@@ -64,6 +65,7 @@ export default function Footer() {
             © 2026 Shaurya Chauhan · Built with ❤️
           </p>
           <div className={styles.bottomActions}>
+            <ThemeSwitcher />
             <CursorToggle />
             <button className={styles.topBtn} onClick={scrollToTop}>
               <ArrowUpIcon /> Back to Top
