@@ -1,7 +1,6 @@
 import { Bricolage_Grotesque, Fira_Code } from "next/font/google"
 
 import Cursor from "@/components/ui/Cursor"
-import Footer from "@/components/layout/Footer"
 import { ThemeProvider } from "@/context/ThemeContext"
 import { AlertProvider } from "@/context/AlertContext"
 import AlertStack from "@/components/ui/Alert/AlertStack"
@@ -30,7 +29,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Cursor />
             <AlertStack />
             {children}
-            <Footer />
           </ThemeProvider>
         </AlertProvider>
       </body>
