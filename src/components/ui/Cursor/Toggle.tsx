@@ -16,12 +16,11 @@ export default function CursorToggle() {
   }, [])
 
   function toggle() {
-    setEnabled((prev) => {
-      const next = !prev
-      document.body.classList.toggle("cursorOff", !next)
-      localStorage.setItem("customCursorEnabled", String(next))
-      return next
-    })
+    const next = !enabled
+    setEnabled(next)
+    document.body.classList.toggle("cursorOff", !next)
+    localStorage.setItem("customCursorEnabled", String(next))
+    window.dispatchEvent(new CustomEvent("cursorToggle", { detail: { enabled: next } }))
   }
 
   return (

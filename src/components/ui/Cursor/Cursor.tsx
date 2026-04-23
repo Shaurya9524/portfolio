@@ -1,13 +1,33 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import styles from "./Cursor.module.css"
 
 export default function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+  const [enabled, setEnabled] = useState(true)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true)
+    setEnabled(localStorage.getItem("customCursorEnabled") !== "false")
+
+    const onToggle = (e: Event) => {
+      setEnabled((e as CustomEvent<{ enabled: boolean }>).detail.enabled)
+    }
+
+    window.addEventListener("cursorToggle", onToggle)
+
+    return () => {
+      window.removeEventListener("cursorToggle", onToggle)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
+
     let mx = 0
     let my = 0
     let rx = 0
@@ -69,9 +89,9 @@ export default function Cursor() {
       cancelAnimationFrame(rafId)
       observer.disconnect()
     }
-  }, [])
+  }, [enabled])
 
-  return (
+  return mounted && enabled && (
     <>
       <div ref={dotRef} className={styles.dot} />
       <div ref={ringRef} className={styles.ring} />
