@@ -25,10 +25,3 @@
 :global(body.cursorOff) .ring {
   display: none;
 }
-
-@media (max-width: 540px) {
-  .dot,
-  .ring {
-    display: none;
-  }
-}
