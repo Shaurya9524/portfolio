@@ -37,11 +37,7 @@ export default function Projects() {
       <div className={styles.page}>
         <div className={styles.dotGrid} aria-hidden="true" />
         <div className={styles.container}>
-          <Link href="/" className={styles.eyebrow}>
-            <span className={styles.ebar} />
-            {"<-"} Back to Home
-            <span className={styles.ebar} />
-          </Link>
+          <Link href="/" className={styles.backLink}>{"<-"} Back to Home</Link>
           <header className={styles.header}>
             <h1 className={styles.title}>
               Projects<span style={{ color: "var(--blue)" }}>.</span>

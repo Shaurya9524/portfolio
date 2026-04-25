@@ -34,8 +34,9 @@ export const footerLinks = [
   {
     category: "Other",
     links: [
-      { label: "Source Code", href: `${github}/portfolio`, target: "_blank" },
+      { label: "Blog", href: `/blog` },
       { label: "Community", href: discordServer, target: "_blank" },
+      { label: "Source Code", href: `${github}/portfolio`, target: "_blank" },
     ]
   }
 ]

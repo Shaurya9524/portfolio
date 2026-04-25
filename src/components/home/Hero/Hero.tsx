@@ -1,12 +1,15 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useRef } from "react"
 import { github } from "@/config/constants"
 import { GitHubIcon } from "@/components/ui/Icons"
 import styles from "./Hero.module.css"
 
 const phrases = [
-  "I develop applications that delight users."
+  "I develop applications that delight users.",
+  "I write about what I build on my blog.",
+  "I turn ideas into production-ready code."
 ]
 
 export default function Hero() {
@@ -78,10 +81,11 @@ export default function Hero() {
           <span className={styles.twCur} />
         </p>
 
-        <p className={styles.heroDesc}>{
-          `I like building things I'd use myself: clean code, good UX, and actually shipping.
-          If I'm building it, I'm building it right. You can count on me for your next project.`
-        }</p>
+        <p className={styles.heroDesc}>
+          {`I like building things I'd use myself: clean code, good UX, and actually shipping.
+          You can count on me for your next project. I write about what I build on my`}
+          <Link href="/blog" className={styles.heroDescLink}> blog.</Link>
+        </p>
 
         <div className={styles.heroBtns}>
           <a href="#projects" className={styles.btnBlue}>View my work {"->"}</a>
