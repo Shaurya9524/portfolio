@@ -1,0 +1,43 @@
+Every project starts with a question. For Pingify, mine was: *what should I build?*
+
+I wanted to build something open source, something with real utility. Then one day the idea just clicked: a Discord bot that watches your feeds across every platform and pings you when something drops. No more tab-switching, no more missing posts. Discord is already where communities gather anyway.
+
+## Where it could be better
+
+Before writing a single line of code, I did what you should always do with an idea: I looked for it.
+
+MEE6 and YAGPDB both have notification integrations. They work well. But there were two things I felt I could do differently: the better features are either behind a paywall or is closed source. For a bot that sits in your server and monitors feeds, I think transparency matters. You should be able to see exactly what it does with your data.
+
+I also wanted to go further on platform support. Most bots stop at YouTube and Twitch. I wanted to cover Reddit, Kick, Bluesky, X, Trovo, Odysee, and keep adding more.
+
+So the idea wasn't completely unique, but that was fine. I wanted to go further on platform support and build a free, open source alternative that covers more of the platforms: YouTube, Reddit, Twitch, Kick, Bluesky, X, Trovo, Odysee, and more over time. I just needed a name. It came from what the bot literally does: it pings you. Pingify.
+
+## Building it
+
+The project took about three months from start to the initial open source release. I handled everything: design, architecture, and code.
+
+The stack used:
+
+- **TypeScript** throughout, frontend and backend
+- **Next.js** for the web dashboard
+- **Discord.js** for the bot
+- **MongoDB** for persistent data
+- **Supabase** for authentication
+- **Node.js** backend connecting everything
+- Various **social platform APIs** for the feed integrations
+
+Getting the platform APIs working was the most tedious part. Every platform has its own rate limits, auth flows, and response formats. Normalizing all of that into a consistent internal structure took real work.
+
+The dashboard was important to me from the start. A bot you can only configure through slash commands has its limits. A web UI makes it accessible to server owners who aren't developers.
+
+## Why open source
+
+Being open source isn't just a checkbox. For a bot like this, it's a feature. Anyone can read the code, verify what data is stored, and see exactly how platform feeds are fetched. There's no black box.
+
+It also means the project doesn't die if I stop actively working on it. The community can fork it, extend it, add new platform integrations, whatever they need.
+
+## Where it is now
+
+Pingify is [live](https://pingify-bot.vercel.app). The code is public on [GitHub](https://github.com/Shaurya9524/pingify). If you run a Discord community and you're tired of manually checking feeds across platforms, give it a shot.
+
+And if you want to add a platform integration or fix something, PRs are open.
