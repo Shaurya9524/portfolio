@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { blogData } from "@/data/blog"
 import { BlogPost } from "@/types/blog"
-import { useAlert } from "@/context/AlertContext"
 import { formatTwoDigits } from "@/lib/utils/format"
 import styles from "./page.module.css"
 
@@ -46,7 +45,6 @@ function BlogCard({ post, side, delay }: { post: BlogPost, side: "left" | "right
 }
 
 export default function BlogsPage() {
-  const { push } = useAlert()
   let animIndex = 0
   let postIndex = 0
 
@@ -68,9 +66,9 @@ export default function BlogsPage() {
             const delay = animIndex++ * 0.08
             postIndex++
             return (
-              <div key={post.slug} onClick={() => push({ message: "Blog coming soon...", variant: "info" })}>
+              <Link href={`/blog/${post.slug}`} key={post.slug}>
                 <BlogCard post={post} side={side} delay={delay} />
-              </div>
+              </Link>
             )
           })}
         </div>
